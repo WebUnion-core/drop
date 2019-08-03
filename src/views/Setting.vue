@@ -4,11 +4,17 @@
     <ul class="option-list">
         <li class="option-item">
             <label class="label">Theme color : </label>
-            <el-color-picker v-model="themeColor" />
+            <el-color-picker
+                :value="themeColor"
+                @change="color => changeColor('themeColor', color)"
+            />
         </li>
         <li class="option-item">
             <label class="label">Font color : </label>
-            <el-color-picker v-model="fontColor" />
+            <el-color-picker
+                :value="fontColor"
+                @change="color => changeColor('fontColor', color)"
+            />
         </li>
     </ul>
 </div>
@@ -16,13 +22,28 @@
 
 <script>
 // @ is an alias to /src
+import { mapState } from 'vuex';
+
 export default {
     name: 'Setting',
-    data() {
-        return {
-            themeColor: '#FFFFFF',
-            fontColor: '#000000',
-        };
+    computed: {
+        ...mapState([
+            'themeColor',
+            'fontColor',
+        ]),
+    },
+    methods: {
+        changeColor(target, color) {
+            switch (target) {
+                case 'themeColor':
+                    this.$store.commit('SET_THEME_COLOR', color);
+                    break;
+                case 'fontColor':
+                    this.$store.commit('SET_FONT_COLOR', color);
+                    break;
+                default:
+            }
+        },
     },
 }
 </script>
@@ -43,7 +64,7 @@ export default {
     .option-list {
         .option-item {
             @extend .flex-vertical-middle;
-            padding: 10px 0;
+            padding: 20px 20px 20px 10px;
 
             .label {
                 flex: 1;
