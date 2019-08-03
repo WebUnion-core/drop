@@ -1,29 +1,34 @@
+
 # blue-drop
 
-## Project setup
-```
-yarn install
+> blue-drop 是 WebUnion 基于 vue-cli 自定义的 vue 项目，使用 element-ui、sass、ES6 等技术栈。
+
+## 安装依赖
+
+```sh
+yarn
 ```
 
-### Compiles and hot-reloads for development
-```
+## 启动热更新服务
+
+```sh
 yarn run serve
 ```
 
-### Compiles and minifies for production
-```
+## 打包
+
+```sh
 yarn run build
 ```
 
-### Run your tests
-```
+## 启动测试
+
+```sh
 yarn run test
 ```
 
-### Lints and fixes files
-```
+## 代码检查
+
+```sh
 yarn run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
