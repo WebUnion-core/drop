@@ -1,7 +1,7 @@
 
 # blue-drop
 
-![image](./public/blue-drop-head)
+![image](./public/blue-drop-head.jpg)
 
 > blue-drop 是 WebUnion 基于 vue-cli 自定义的 vue 项目，使用 element-ui、sass、ES6 等技术栈。
 
