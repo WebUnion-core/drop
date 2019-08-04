@@ -1,23 +1,23 @@
 <template>
-<div
-    id="app"
-    :style="{
-        backgroundColor: themeColor,
-        color: fontColor,
-    }"
->
-    <el-menu
-        :default-active="activeIndex"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
+    <div
+        id="app"
+        :style="{
+            backgroundColor: themeColor,
+            color: fontColor,
+        }"
     >
-        <el-menu-item index="0">Home</el-menu-item>
-        <el-menu-item index="1">Setting</el-menu-item>
-    </el-menu>
+        <el-menu
+            :default-active="activeIndex"
+            class="el-menu-demo"
+            mode="horizontal"
+            @select="handleSelect"
+        >
+            <el-menu-item index="0">Home</el-menu-item>
+            <el-menu-item index="1">Setting</el-menu-item>
+        </el-menu>
 
-    <router-view />
-</div>
+        <router-view />
+    </div>
 </template>
 
 <script>
@@ -51,7 +51,7 @@ export default {
             this.$router.replace(this.menus[parseInt(index, 10)].path);
         },
     },
-}
+};
 </script>
 
 <style lang="scss" scoped>

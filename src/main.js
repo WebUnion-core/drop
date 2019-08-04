@@ -1,7 +1,3 @@
-import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
-import store from './store';
 import './assets/scss/reset.scss';
 import 'element-ui/lib/theme-chalk/index.css';
 import {
@@ -9,6 +5,11 @@ import {
     MenuItem,
     ColorPicker,
 } from 'element-ui';
+
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
 
 Vue.config.productionTip = false;
 

@@ -1,23 +1,23 @@
 <template>
-<div class="container setting-container">
-    <h1 class="title">You can set your theme here. </h1>
-    <ul class="option-list">
-        <li class="option-item">
-            <label class="label">Theme color : </label>
-            <el-color-picker
-                :value="themeColor"
-                @change="color => changeColor('themeColor', color)"
-            />
-        </li>
-        <li class="option-item">
-            <label class="label">Font color : </label>
-            <el-color-picker
-                :value="fontColor"
-                @change="color => changeColor('fontColor', color)"
-            />
-        </li>
-    </ul>
-</div>
+    <div class="container setting-container">
+        <h1 class="title">You can set your theme here. </h1>
+        <ul class="option-list">
+            <li class="option-item">
+                <label class="label">Theme color : </label>
+                <el-color-picker
+                    :value="themeColor"
+                    @change="color => changeColor('themeColor', color)"
+                />
+            </li>
+            <li class="option-item">
+                <label class="label">Font color : </label>
+                <el-color-picker
+                    :value="fontColor"
+                    @change="color => changeColor('fontColor', color)"
+                />
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script>
@@ -45,7 +45,7 @@ export default {
             }
         },
     },
-}
+};
 </script>
 
 <style lang="scss" scoped>
