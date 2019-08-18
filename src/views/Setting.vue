@@ -48,28 +48,32 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/scss/base.scss";
-@import "@/assets/scss/common.scss";
 
 .setting-container {
-    padding: 20px;
+    padding: pxToRem(20px);
 
     .title {
-        padding: 10px 0 30px;
-        font-size: 25px;
+        padding: pxToRem(10px) 0 pxToRem(30px);
+        font-size: pxToRem(20px);
         border-bottom: 1px solid $border-color-base;
     }
 
-    .option-list {
-        .option-item {
-            @extend .flex-vertical-middle;
-            padding: 20px 20px 20px 10px;
+    .option-item {
+        @extend .flex-vertical-middle;
+        padding: pxToRem(10px);
+        font-size: pxToRem(14px);
 
-            .label {
-                flex: 1;
-            }
+        .label {
+            flex: 1;
         }
+    }
+
+    .el-color-picker,
+    .el-color-picker__trigger {
+        width: pxToRem(30px);
+        height: pxToRem(30px);
     }
 }
 </style>

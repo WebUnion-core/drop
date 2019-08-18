@@ -11,16 +11,15 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/scss/base.scss";
-@import "@/assets/scss/common.scss";
 
 .home-container {
     @extend .flex-complete-middle;
 
     .title {
         text-align: center;
-        font-size: 25px;
+        font-size: pxToRem(20px);
     }
 }
 </style>

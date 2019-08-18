@@ -53,36 +53,3 @@ export default {
     },
 };
 </script>
-
-<style lang="scss" scoped>
-@import "@/assets/scss/base.scss";
-@import "@/assets/scss/common.scss";
-
-#app {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
-</style>
-
-<style lang="scss">
-@import "@/assets/scss/base.scss";
-@import "@/assets/scss/common.scss";
-
-#app {
-    .el-menu {
-        background-color: inherit;
-    }
-    .el-menu--horizontal > .el-menu-item.is-active {
-        color: inherit;
-        border-color: inherit;
-    }
-    .el-menu--horizontal > .el-menu-item:not(.is-disabled):focus,
-    .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover,
-    .el-menu--horizontal > .el-submenu .el-submenu__title:hover {
-        color: inherit;
-        background-color: inherit;
-    }
-}
-</style>

@@ -6,7 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>blue-drop</title>
+
+    <title>drop</title>
+
+    <script title="公共全局参数">
+    var ua = navigator.userAgent;
+    window.public = {
+        bISPC: !/Android|webOS|iPhone|iPod|BlackBerry/i.test(ua),
+        bIsIOS: !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+        bIsUc: ua.toLowerCase().match(/ucweb/i) == "ucweb",
+        bIsAndroid: ua.toLowerCase().match(/android/i) == "android",
+        bIsAndroidVersion: Number(ua.toLowerCase().substr(ua.toLowerCase().indexOf('android') + 8, 3)),
+        bIsQQ: ua.toLowerCase().match(/qq/i) == "qq",
+        bIsWechat: ua.toLowerCase().match(/micromessenger/i) == "micromessenger",
+        bIsWeibo: ua.toLowerCase().match(/weibo/i) == "weibo",
+        bIsHuawei: ua.toLowerCase().match(/huawei/i) == "huawei"
+    };
+    </script>
+
+    <script title="rem初始化">
+    var resizeEvt = 'onorientationchange' in window ? 'onorientationchange' : 'resize';
+    var scale = 1 / window.devicePixelRatio;
+
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 'user-scalable=no,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale);
+
+    var onresize = function () {
+        var deviceWidth = Math.min(document.body.clientWidth, document.documentElement.clientWidth);
+        var screenWidth = window.screen.width;
+        var fontSize;
+
+        if (deviceWidth / screenWidth != window.devicePixelRatio) {
+            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+            deviceWidth = Math.min(document.body.clientWidth, document.documentElement.clientWidth);
+        }
+
+        if (deviceWidth <= 750) {
+            // 移动设备
+            fontSize = deviceWidth / 750;
+        } else if (deviceWidth <= 960) {
+            // 平板设备
+            fontSize = deviceWidth / (960 * 1.5);
+        } else {
+            // PC设备
+            fontSize = deviceWidth / (1080 * 1.5);
+        }
+
+        document.documentElement.style.fontSize = fontSize + 'px';
+    };
+
+    window.addEventListener(resizeEvt, onresize, false);
+    document.addEventListener('DOMContentLoaded', onresize, false);
+    </script>
 </head>
 
 <body>
